@@ -38,12 +38,10 @@ TList<T>::TList(const TList<T>& p) {
   }
   else
   {
-    // Copy the first node
     begin = new TListNode<T>(*p.begin);
     TListNode<T>* par = begin;
     TListNode<T>* rap = p.begin->GetNext(); // Move to the next node in the source list
 
-    // Copy the rest of the nodes
     while (rap != p.begin)
     {
       TListNode<T>* newNode = new TListNode<T>();
@@ -54,7 +52,6 @@ TList<T>::TList(const TList<T>& p) {
       rap = rap->GetNext();
     }
 
-    // Set the end node
     end = par;
   }
 }
